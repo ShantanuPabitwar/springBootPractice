@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
-@Component("auditorAwareImpl")
-public class AuditorAwareImpl implements AuditorAware {
+@Component("auditAwareImpl")
+public class AuditorAwareImpl implements AuditorAware<String> {
 
     @Override
     public Optional<String> getCurrentAuditor() {
-        return Optional.ofNullable(SecurityContextHolder.getContext().getAuthentication().getName());
+            return Optional.ofNullable(SecurityContextHolder.getContext().getAuthentication().getName());
     }
 }
